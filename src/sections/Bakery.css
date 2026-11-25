@@ -1,0 +1,344 @@
+.bakery-chapter {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    color-mix(in srgb, var(--surface) 36%, transparent) 50%,
+    transparent 100%
+  );
+}
+
+.bakery-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.bakery-summary-list {
+  list-style: none;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.bakery-summary-item {
+  padding-block: 0.85rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.bakery-summary-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  color: var(--heading);
+}
+
+.bakery-summary-top strong {
+  font-family: var(--font-editorial);
+  font-size: 1.32rem;
+  font-weight: 600;
+}
+
+.bakery-summary-top span {
+  font-size: 0.88rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.bakery-summary-item p {
+  margin: 0.22rem 0 0;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+.bakery-bag-hint {
+  margin: 0.85rem 0 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--heading);
+}
+
+.bakery-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.bakery-photo-wrap {
+  position: relative;
+  will-change: transform;
+}
+
+.bakery-frame {
+  margin: 0;
+  border: 1px solid var(--border-subtle);
+  padding: 0.75rem;
+  background: var(--surface-paper);
+  box-shadow: var(--card-shadow);
+}
+
+.bakery-photo {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  filter: var(--photo-filter);
+}
+
+.bakery-caption {
+  padding-top: 0.65rem;
+  font-family: var(--font-hand);
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+.bakery-sprig {
+  position: absolute;
+  right: -1.5rem;
+  bottom: -2rem;
+  width: 100px;
+  color: var(--heading);
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.bakery-ledgers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3.5vw, 2.75rem);
+  padding-block: 2rem;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.bakery-ledger-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.bakery-ledger-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.5rem;
+}
+
+.bakery-ledger-head h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: var(--heading);
+}
+
+.bakery-inline-link {
+  border: 0;
+  background: transparent;
+  padding: 0.15rem 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--heading);
+  border-bottom: 1px solid var(--oak);
+  cursor: pointer;
+}
+
+.bakery-price-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.52rem;
+}
+
+.bakery-price-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+}
+
+.bakery-dots {
+  flex: 1;
+  border-bottom: 1px dotted var(--border-subtle);
+  transform: translateY(-3px);
+}
+
+.bakery-price-list strong {
+  font-weight: 600;
+  color: var(--heading);
+  white-space: nowrap;
+}
+
+.bakery-desserts-strip {
+  margin-top: 2.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.bakery-dessert-col h4 {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-editorial);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--heading);
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.4rem;
+}
+
+/* Modal */
+.bakery-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: rgba(23, 56, 47, 0.72);
+  backdrop-filter: blur(5px);
+}
+
+.bakery-modal {
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--surface-paper);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 1.75rem;
+  box-shadow: var(--card-shadow);
+}
+
+.bakery-modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.bakery-modal-title {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--heading);
+}
+
+.bakery-modal-close {
+  border: 1px solid var(--border-subtle);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--heading);
+  cursor: pointer;
+}
+
+.bakery-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bakery-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.bakery-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.bakery-field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--heading);
+}
+
+.bakery-field input,
+.bakery-field select,
+.bakery-field textarea {
+  width: 100%;
+  padding: 0.62rem 0.75rem;
+  border: 1px solid var(--border-subtle);
+  background: var(--background);
+  color: var(--text);
+  border-radius: 4px;
+}
+
+.bakery-form-error {
+  margin: 0;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.bakery-preview-box {
+  margin-top: 1.25rem;
+  border: 1px solid var(--border-subtle);
+  background: var(--background);
+  padding: 0.9rem;
+}
+
+.bakery-preview-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.bakery-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  color: var(--heading);
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.bakery-preview-pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .bakery-hero-grid,
+  .bakery-ledgers-grid,
+  .bakery-desserts-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .bakery-field-row {
+    grid-template-columns: 1fr;
+  }
+}

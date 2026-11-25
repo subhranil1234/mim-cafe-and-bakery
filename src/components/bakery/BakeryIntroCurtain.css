@@ -1,0 +1,101 @@
+.bakery-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 130;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--gold) 24%, transparent), transparent 55%),
+    var(--surface-paper);
+  color: var(--heading);
+  clip-path: circle(120% at 50% 50%);
+  overflow: hidden;
+}
+
+.bakery-curtain-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.15rem;
+  text-align: center;
+  padding-inline: 1.5rem;
+}
+
+.bakery-curtain-emblem {
+  position: relative;
+  width: clamp(200px, 38vw, 270px);
+  aspect-ratio: 260 / 150;
+  display: grid;
+  place-items: center;
+}
+
+.bakery-curtain-svg {
+  width: 100%;
+  height: auto;
+}
+
+.bakery-curtain-stroke {
+  stroke: var(--heading);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bakery-curtain-ribbon {
+  stroke: var(--oak);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+.bakery-curtain-heart {
+  position: absolute;
+  top: 29%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.bakery-curtain-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.bakery-curtain-item {
+  opacity: 0;
+}
+
+.bakery-curtain-eyebrow {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--oak);
+}
+
+.bakery-curtain-title {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: clamp(1.9rem, 4.4vw, 3.1rem);
+  line-height: 1.15;
+  color: var(--heading);
+}
+
+.bakery-curtain-skip {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  padding: 0.36rem 0.88rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  color: var(--heading);
+  font-size: 0.76rem;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.bakery-curtain-skip:hover {
+  opacity: 1;
+}

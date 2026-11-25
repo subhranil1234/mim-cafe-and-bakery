@@ -1,0 +1,81 @@
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+
+.font-hand {
+  font-family: var(--font-hand);
+}
+
+.chapter-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.chapter-label::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--oak);
+}
+
+.chapter-number {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 9rem);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--heading);
+  letter-spacing: -0.03em;
+}
+
+.title {
+  display: inline-block;
+  padding-bottom: 0.12em;
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  color: var(--heading);
+}
+
+.headline-hero {
+  font-size: clamp(2.75rem, 6.5vw, 5.75rem);
+}
+
+.headline-chapter {
+  font-size: clamp(2.15rem, 4.5vw, 4rem);
+}
+
+.headline-sub {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.3;
+  color: var(--heading);
+}
+
+.hand-note {
+  font-family: var(--font-hand);
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  line-height: 1.25;
+  color: var(--text-muted);
+}
+
+.prose-lead {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  line-height: 1.55;
+  color: var(--text);
+}

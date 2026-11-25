@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIM Bakery &amp; Café | Coffee, Bakery &amp; Creative Experiences in Siliguri</title>
+    <meta
+      name="description"
+      content="Discover MIM Bakery & Café in Salugara, Siliguri. Explore coffee, artisan bakery treats, cake decorating, clay activities and canvas painting."
+    />
+    <meta name="theme-color" content="#17382F" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MIM Bakery & Café | Coffee, Bakery & Creative Experiences in Siliguri" />
+    <meta
+      property="og:description"
+      content="A moment to slow down. A chance to create. Visit MIM Bakery & Café in Salugara, Siliguri."
+    />
+    <meta property="og:image" content="/images/cafe/exterior-night.jpg" />
+    <meta property="og:locale" content="en_IN" />
+
+    <link rel="icon" type="image/png" href="/images/brand/mim-logo-original.png" />
+
+    <!-- Preload critical hero imagery and avoid theme flash before React mounts -->
+    <script>
+      (function () {
+        try {
+          var param = new URLSearchParams(window.location.search).get('ambience');
+          var theme;
+          if (param === 'day' || param === 'night') {
+            theme = param;
+          } else {
+            var parts = new Intl.DateTimeFormat('en-GB', {
+              timeZone: 'Asia/Kolkata',
+              hour: '2-digit',
+              hour12: false
+            }).formatToParts(new Date());
+            var hr = Number((parts.find(function (p) { return p.type === 'hour'; }) || {}).value || 12);
+            theme = hr >= 6 && hr < 18 ? 'day' : 'night';
+          }
+          document.documentElement.setAttribute('data-theme', theme);
+          document.documentElement.style.colorScheme = theme === 'night' ? 'dark' : 'light';
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'day');
+        }
+      })();
+    </script>
+
+    <!-- LocalBusiness Structured Data (confirmed facts only) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Bakery",
+        "name": "MIM Bakery & Café",
+        "description": "An intimate neighbourhood café, artisan bakery, and creative studio in Salugara, Siliguri. A moment to slow down. A chance to create.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Salugara, Siliguri",
+          "addressRegion": "West Bengal",
+          "addressCountry": "IN"
+        },
+        "hasMap": "https://www.google.com/maps/search/Mim+Bakery+and+Cafe+Salugara+Siliguri/",
+        "priceRange": "₹₹"
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

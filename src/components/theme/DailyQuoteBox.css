@@ -1,0 +1,74 @@
+.daily-quote-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.22rem;
+}
+
+.daily-quote-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 24rem;
+  padding: 0.42rem 0.95rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  background: color-mix(in srgb, var(--background) 80%, transparent);
+  backdrop-filter: blur(6px);
+  color: var(--heading);
+}
+
+.daily-quote-heart {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.daily-quote-text {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 0.94rem;
+  font-weight: 500;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.daily-quote-meta {
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.daily-quote-wrap.is-compact {
+  align-items: flex-start;
+  width: 100%;
+}
+
+.daily-quote-wrap.is-compact .daily-quote-box {
+  max-width: 100%;
+  border-radius: 16px;
+  padding: 0.55rem 0.95rem;
+}
+
+.daily-quote-wrap.is-compact .daily-quote-text {
+  white-space: normal;
+}
+
+@media (max-width: 1240px) {
+  .daily-quote-box {
+    max-width: 17.5rem;
+  }
+}
+
+@media (max-width: 1120px) {
+  .daily-quote-meta {
+    display: none;
+  }
+
+  .daily-quote-wrap.is-compact .daily-quote-meta {
+    display: inline;
+  }
+}

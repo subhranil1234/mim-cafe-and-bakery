@@ -1,0 +1,202 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  color: var(--heading);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.preloader-curtains {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Night / Pre-dawn: Forest-green double doors with warm golden centre seam */
+.preloader-door {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50.5%;
+  background:
+    radial-gradient(circle at 50% 44%, rgba(235, 197, 139, 0.14), transparent 55%),
+    var(--forest);
+  will-change: transform;
+}
+
+.preloader-door-left {
+  left: 0;
+  border-right: 1px solid rgba(235, 197, 139, 0.45);
+  box-shadow: inset -24px 0 60px rgba(235, 197, 139, 0.08);
+}
+
+.preloader-door-right {
+  right: 0;
+  border-left: 1px solid rgba(235, 197, 139, 0.45);
+  box-shadow: inset 24px 0 60px rgba(235, 197, 139, 0.08);
+}
+
+/* Sunrise / Morning / Afternoon: Sunlit linen veil lifting upward */
+.preloader-sunlift {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(235, 197, 139, 0.28), transparent 56%),
+    var(--ivory);
+  border-bottom: 2px solid rgba(235, 197, 139, 0.65);
+  box-shadow: 0 24px 70px rgba(235, 197, 139, 0.35);
+  will-change: transform;
+}
+
+/* Sunset: Warm golden-oak twilight horizon parting */
+.preloader-horizon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50.5%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(235, 197, 139, 0.32), transparent 62%),
+    linear-gradient(180deg, #17382F 0%, #2b3a30 100%);
+  will-change: transform;
+}
+
+.preloader-horizon-top {
+  top: 0;
+  border-bottom: 1.5px solid rgba(235, 197, 139, 0.55);
+}
+
+.preloader-horizon-bottom {
+  bottom: 0;
+  border-top: 1.5px solid rgba(235, 197, 139, 0.55);
+}
+
+/* Central Calligraphy Stage */
+.preloader-stage {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.35rem;
+  text-align: center;
+  padding-inline: 1.5rem;
+}
+
+.preloader-calligraphy-box {
+  position: relative;
+  width: clamp(210px, 42vw, 310px);
+  aspect-ratio: 360 / 210;
+  display: grid;
+  place-items: center;
+}
+
+.preloader-logo-reveal {
+  width: 78%;
+  clip-path: inset(0 100% 0 0);
+  opacity: 0.35;
+}
+
+.preloader-logo {
+  width: 100%;
+  height: auto;
+}
+
+.preloader-pen-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.preloader-pen-stroke {
+  stroke: var(--oak);
+  stroke-width: 2.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.preloader-pen-flourish {
+  stroke: var(--gold);
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  opacity: 0.72;
+}
+
+.preloader-pen-nib {
+  fill: var(--heart);
+  filter: drop-shadow(0 0 8px rgba(235, 197, 139, 0.95));
+  opacity: 0;
+}
+
+.preloader-heart-burst {
+  position: absolute;
+  top: 23%;
+  left: 52.5%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.preloader-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.preloader-word {
+  display: inline-block;
+  opacity: 0;
+}
+
+.preloader-greeting {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--oak);
+}
+
+.preloader-scene {
+  margin: 0;
+  max-width: 30rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 0.32em;
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.2vw, 1.38rem);
+  line-height: 1.4;
+  color: var(--heading);
+}
+
+.preloader-skip {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 3;
+  pointer-events: auto;
+  padding: 0.38rem 0.9rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  background: color-mix(in srgb, var(--background) 78%, transparent);
+  color: var(--heading);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: opacity 0.25s ease;
+}
+
+.preloader-skip:hover {
+  opacity: 1;
+}

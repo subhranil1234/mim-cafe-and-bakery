@@ -1,0 +1,90 @@
+.menu-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 130;
+  display: grid;
+  place-items: center;
+  background: var(--background);
+  color: var(--heading);
+  overflow: hidden;
+}
+
+.menu-curtain-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.15rem;
+  padding-inline: 1.5rem;
+}
+
+.menu-curtain-rule-svg {
+  width: clamp(190px, 38vw, 320px);
+  height: 12px;
+}
+
+.menu-curtain-rule {
+  stroke: var(--oak);
+  stroke-width: 1.3;
+}
+
+.menu-curtain-wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 15vw, 10.5rem);
+  font-weight: 500;
+  line-height: 0.84;
+  letter-spacing: -0.04em;
+  color: var(--heading);
+}
+
+.menu-curtain-row {
+  display: flex;
+  gap: 0.04em;
+}
+
+.menu-curtain-mask {
+  display: inline-block;
+  overflow: hidden;
+  padding-inline: 0.03em;
+}
+
+.menu-curtain-glyph {
+  display: inline-block;
+  opacity: 0;
+}
+
+.menu-curtain-sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 1.12rem;
+  color: var(--text-muted);
+  opacity: 0;
+}
+
+.menu-curtain-heart {
+  display: inline-flex;
+  opacity: 0;
+}
+
+.menu-curtain-skip {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  padding: 0.36rem 0.88rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  color: var(--heading);
+  font-size: 0.76rem;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.menu-curtain-skip:hover {
+  opacity: 1;
+}

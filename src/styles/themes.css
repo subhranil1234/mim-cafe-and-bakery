@@ -1,0 +1,81 @@
+:root,
+:root[data-theme='day'] {
+  --background: var(--ivory);
+  --surface: var(--mint);
+  --surface-paper: #faf6ed;
+  --text: var(--ink);
+  --text-muted: #39473f;
+  --heading: var(--forest);
+  --accent: var(--heart);
+  --button-bg: var(--forest);
+  --button-text: var(--ivory);
+  --border: var(--forest);
+  --border-subtle: rgba(23, 56, 47, 0.18);
+  --ambient-light: var(--gold);
+  --ambient-oak: var(--oak);
+  --nav-scrolled-bg: rgba(245, 240, 230, 0.92);
+  --nav-top-text: var(--forest);
+  --hero-scrim: rgba(245, 240, 230, 0.72);
+  --hero-scrim-edge: rgba(245, 240, 230, 0.92);
+  --card-shadow: 0 24px 60px rgba(23, 56, 47, 0.08);
+  --paper-grain-opacity: 0.045;
+  --photo-filter: brightness(1.02) saturate(1.02);
+}
+
+:root[data-theme='night'] {
+  --background: var(--forest);
+  --surface: var(--ink);
+  --surface-paper: #1d2b25;
+  --text: var(--ivory);
+  --text-muted: var(--mint);
+  --heading: var(--ivory);
+  --accent: var(--heart);
+  --button-bg: var(--gold);
+  --button-text: var(--ink);
+  --border: var(--mint);
+  --border-subtle: rgba(212, 226, 218, 0.22);
+  --ambient-light: var(--gold);
+  --ambient-oak: var(--oak);
+  --nav-scrolled-bg: rgba(23, 56, 47, 0.92);
+  --nav-top-text: var(--ivory);
+  --hero-scrim: rgba(23, 56, 47, 0.62);
+  --hero-scrim-edge: rgba(23, 56, 47, 0.94);
+  --card-shadow: 0 28px 70px rgba(10, 22, 18, 0.42);
+  --paper-grain-opacity: 0.035;
+  --photo-filter: brightness(0.95) contrast(1.04);
+}
+
+/* Transitional solar phases around Siliguri sunrise and sunset */
+:root[data-solar-phase='sunrise-transition'] {
+  --ambient-light: var(--gold);
+}
+
+:root[data-solar-phase='sunrise-transition'] .midground {
+  opacity: 1;
+  background:
+    radial-gradient(
+      circle at 22% 24%,
+      color-mix(in srgb, var(--gold) 28%, transparent),
+      transparent 52%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      color-mix(in srgb, var(--oak) 16%, transparent),
+      transparent 48%
+    );
+}
+
+:root[data-solar-phase='sunset-transition'] .midground {
+  opacity: 1;
+  background:
+    radial-gradient(
+      circle at 76% 28%,
+      color-mix(in srgb, var(--gold) 26%, transparent),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 20% 72%,
+      color-mix(in srgb, var(--oak) 20%, transparent),
+      transparent 48%
+    );
+}

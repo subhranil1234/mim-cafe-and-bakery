@@ -1,0 +1,187 @@
+.savour-chapter {
+  overflow: hidden;
+}
+
+.savour-top-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.savour-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.savour-photos-col {
+  position: relative;
+}
+
+.savour-photo-stack {
+  display: grid;
+  grid-template-columns: 1fr 0.86fr;
+  gap: 1.25rem;
+  align-items: start;
+  will-change: transform;
+}
+
+.savour-photo-card {
+  margin: 0;
+  border: 1px solid var(--border-subtle);
+  padding: 0.65rem;
+  background: var(--surface-paper);
+  box-shadow: var(--card-shadow);
+}
+
+.savour-photo-offset {
+  margin-top: 3.5rem;
+}
+
+.savour-img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  filter: var(--photo-filter);
+  transition: transform 0.8s var(--ease-editorial);
+}
+
+.savour-photo-card:hover .savour-img {
+  transform: scale(1.03);
+}
+
+.savour-caption {
+  padding-top: 0.6rem;
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  color: var(--text-muted);
+}
+
+.savour-botanical-accent {
+  position: absolute;
+  left: -2.25rem;
+  bottom: -3rem;
+  width: 150px;
+  color: var(--heading);
+  opacity: 0.16;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.savour-floral-svg {
+  width: 100%;
+  height: auto;
+}
+
+.savour-categories-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.savour-cat-row {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.savour-cat-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+}
+
+.savour-cat-num {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--oak);
+}
+
+.savour-cat-title {
+  margin: 0;
+  font-family: var(--font-editorial);
+  font-size: clamp(1.5rem, 2.4vw, 1.95rem);
+  font-weight: 600;
+  color: var(--heading);
+}
+
+.savour-cat-note {
+  margin: 0.35rem 0 0.9rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.savour-cat-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.savour-item-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.savour-dots {
+  flex: 1;
+  border-bottom: 1px dotted var(--border-subtle);
+  transform: translateY(-3px);
+}
+
+.savour-item-price {
+  font-weight: 600;
+  color: var(--heading);
+  white-space: nowrap;
+}
+
+.savour-footer-callout {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-left: 2px solid var(--oak);
+  background: color-mix(in srgb, var(--surface) 45%, transparent);
+}
+
+.savour-inline-sprig {
+  width: 36px;
+  height: auto;
+  flex-shrink: 0;
+  color: var(--heading);
+  opacity: 0.7;
+}
+
+.savour-footer-callout p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 960px) {
+  .savour-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .savour-photo-offset {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .savour-photo-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .savour-photo-offset {
+    margin-top: 0;
+  }
+}

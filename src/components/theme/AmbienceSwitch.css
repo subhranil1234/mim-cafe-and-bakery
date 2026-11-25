@@ -1,0 +1,60 @@
+.ambience-control {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+.ambience-segmented {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  background: color-mix(in srgb, var(--background) 78%, transparent);
+  backdrop-filter: blur(6px);
+}
+
+.ambience-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.32rem 0.72rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--heading);
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.ambience-option:hover {
+  background: color-mix(in srgb, var(--heading) 8%, transparent);
+}
+
+.ambience-option.is-active {
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-weight: 600;
+}
+
+.ambience-status {
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.ambience-control.is-compact {
+  align-items: flex-start;
+}
+
+@media (max-width: 1120px) {
+  .ambience-status {
+    display: none;
+  }
+}

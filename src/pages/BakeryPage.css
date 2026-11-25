@@ -1,0 +1,45 @@
+.bakery-window-folio {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.bakery-window-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+  padding-bottom: 1.5rem;
+}
+
+.bakery-window-lead {
+  margin: 0 0 1rem;
+  font-size: 0.98rem;
+  color: var(--text);
+}
+
+.bakery-window-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.bakery-window-photo-frame {
+  margin: 0;
+  border: 1px solid var(--border-subtle);
+  padding: 0.55rem;
+  background: var(--background);
+}
+
+.bakery-window-photo {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  filter: var(--photo-filter);
+}
+
+@media (max-width: 860px) {
+  .bakery-window-hero {
+    grid-template-columns: 1fr;
+  }
+}

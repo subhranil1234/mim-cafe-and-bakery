@@ -1,0 +1,32 @@
+{
+  "name": "mim-bakery-cafe",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "MIM Bakery & Café, Salugara, Siliguri — Living Storytelling & Living Ambience website",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/bodoni-moda": "^5.1.1",
+    "@fontsource/caveat": "^5.1.1",
+    "@fontsource/cormorant-garamond": "^5.1.1",
+    "@fontsource/dm-sans": "^5.1.1",
+    "animejs": "^4.0.0",
+    "lucide-react": "^0.475.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "suncalc": "^1.9.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/suncalc": "^1.9.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.3",
+    "vite": "^6.2.0"
+  }
+}
