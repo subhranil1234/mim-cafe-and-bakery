@@ -33,11 +33,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMenu, onOpenBakery }) => {
 
   useEffect(() => {
     if (!mobileOpen) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setMobileOpen(false);
     };
     window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener('keydown', onKeyDown);
+    };
   }, [mobileOpen]);
 
   const handleLinkClick = () => {
@@ -45,62 +50,64 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMenu, onOpenBakery }) => {
   };
 
   return (
-    <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
-      <div className="nav-inner">
-        <a href="#home" className="nav-brand" aria-label="MIM Bakery & Café Home">
-          <img
-            src={logoSrc}
-            alt="MIM Bakery & Café"
-            width={594}
-            height={395}
-            className="nav-logo"
-          />
-        </a>
-
-        <nav className="nav-desktop" aria-label="Primary navigation">
-          <ul className="nav-links">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="nav-link"
-                  onClick={(e) => {
-                    if (link.route && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey) {
-                      e.preventDefault();
-                      if (link.route === 'menu') onOpenMenu();
-                      if (link.route === 'bakery') onOpenBakery();
-                    }
-                  }}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <div className="nav-actions">
-          <div className="nav-ambience-desktop">
-            <DailyQuoteBox />
-          </div>
-          <a href="#visit" className="button button-sm nav-visit-cta">
-            Plan Your Visit
+    <>
+      <header className={`site-header ${scrolled ? 'is-scrolled' : ''} ${mobileOpen ? 'is-menu-open' : ''}`}>
+        <div className="nav-inner">
+          <a href="#home" className="nav-brand" aria-label="MIM Bakery & Café Home">
+            <img
+              src={logoSrc}
+              alt="MIM Bakery & Café"
+              width={594}
+              height={395}
+              className="nav-logo"
+            />
           </a>
-          <button
-            type="button"
-            className="nav-mobile-toggle"
-            aria-expanded={mobileOpen}
-            aria-controls="mobile-nav-drawer"
-            aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            onClick={() => setMobileOpen((prev) => !prev)}
-          >
-            {mobileOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
-          </button>
+
+          <nav className="nav-desktop" aria-label="Primary navigation">
+            <ul className="nav-links">
+              {NAV_LINKS.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="nav-link"
+                    onClick={(e) => {
+                      if (link.route && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey) {
+                        e.preventDefault();
+                        if (link.route === 'menu') onOpenMenu();
+                        if (link.route === 'bakery') onOpenBakery();
+                      }
+                    }}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="nav-actions">
+            <div className="nav-ambience-desktop">
+              <DailyQuoteBox />
+            </div>
+            <a href="#visit" className="button button-sm nav-visit-cta">
+              Plan Your Visit
+            </a>
+            <button
+              type="button"
+              className="nav-mobile-toggle"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-nav-drawer"
+              aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              onClick={() => setMobileOpen((prev) => !prev)}
+            >
+              {mobileOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
       {mobileOpen && (
-        <div id="mobile-nav-drawer" className="mobile-drawer" role="dialog" aria-label="Mobile Navigation">
+        <div id="mobile-nav-drawer" className="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
           <nav aria-label="Mobile links">
             <ul className="mobile-nav-links">
               {NAV_LINKS.map((link) => (
@@ -135,6 +142,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMenu, onOpenBakery }) => {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 };
